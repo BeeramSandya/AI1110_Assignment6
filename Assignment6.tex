@@ -1,0 +1,58 @@
+% Inbuilt themes in beamer
+\documentclass{beamer}
+
+% Theme choice:
+\usetheme{CambridgeUS}
+
+% Title page details: 
+\title{Assignment 6} 
+\author{Beeram Sandya cs21btech11006}
+\date{\today}
+\logo{\large \LaTeX{}}
+
+
+\begin{document}
+
+% Title page frame
+\begin{frame}
+    \titlepage 
+\end{frame}
+
+% Remove logo from the next slides
+\logo{}
+
+
+% Outline frame
+\begin{frame}{Outline}
+    \tableofcontents
+\end{frame}
+
+% Lists frame
+\section{Question}
+\begin{frame}{Question}
+\begin{block}{Papoulis ch7 Ex 7.27}
+An infinite sum is by definition a limit :
+\[\sum_{k=1}^{\infty} x_k = \lim_{n\to\infty} y_n \] 
+\[y_n = \sum_{k=1}^{\infty} x_k\]
+Show that if the random variables $x_k$ are independent with zero mean and variance 
+$\sigma_k^2$, then the sum exists in the MS sense if and only if 
+\[\sum_{k=1}^{\infty} \sigma_k^2 < \infty\] 
+
+\end{block}
+\end{frame}
+
+% Blocks frame
+\section{Solution}
+\begin{frame}{Solution}
+Given mean of random variable is zero $=> E\{x_k\}=0$ \\
+\[E\{x_k^2\} = \sigma_k^2\]
+
+\[E\{(\Sigma x_k)^2\} = \Sigma E\{x_k^2\} = \Sigma \sigma_k^2\] 
+If $\sum_{k=1}^{\infty} \sigma_k^2 < \infty$then given $\epsilon > 0$ we can find $n_o$ such that \[\sum_{k=n+1}^{n+m} \sigma_k^2 < \epsilon \] for any m and $n>n_o$
+.Thus,
+\[E\{(y_{m+n}-y_n)^2\} = E\{(\sum_{k=n+1}^{m+n} x_k)^2\} = \sum_{k=n+1}^{n+m} \sigma_k^2 < \epsilon\]
+This shows that (from Cauchy), $y_k$ converges in the MS sense.
+
+\end{frame} 
+
+\end{document}
